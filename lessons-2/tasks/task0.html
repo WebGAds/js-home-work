@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<a href="/index.html">Головна</a>
+	<br>
+	<br>
+	<a href="../lessons2.html">ДЗ №2</a>
+	<h1>Завдання 0</h1>
+	<p>Умова - обчислити значення виразів:</p>
+	<ol>
+		<li>S1=a+12+b</li>
+		<li>S_2=√(((a+b)/2a) )</li>
+		<li>S_3=∛((a+b)c)</li>
+		<li>S_4=sin⁡(a/(-b))</li>
+	</ol>
+	<br>
+	<h2>Розв'язок:</h2>
+	<script>
+		// 1. Вводжу дані
+		// Ціле число parseInt
+		let a = parseInt(prompt('a=', '0'));
+		let b = parseInt(prompt('b=', '0'));
+		// Дійсне число parseFloat
+		let c = parseFloat(prompt('c=', '0'));
+
+		// 2. Обчислення
+		let s1 = a + 12 + b
+		let s2 = Math.sqrt((a + b) / (2 * a));
+		let s3 = Math.sqrt((a + b) * c);
+		let s4 = Math.sin((a / -b));
+
+		// 3. Виводжу результат
+		document.write(`S1= ${s1} <br>`);
+		document.write(`S2= ${s2.toFixed(2)} <br>`);
+		document.write(`S3= ${s3.toFixed(3)} <br>`);
+		document.write(`S4= ${s4.toFixed(4)} <br>`);
+	</script>
+</body>
+
+</html>
