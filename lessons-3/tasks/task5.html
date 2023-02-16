@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+	<a href="/index.html">Головна</a>
+	<br>
+	<br>
+	<a href="../lessons3.html">ДЗ №3</a>
+	<h1>Завдання 5</h1>
+	<div>
+		<p>Умова - з клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний
+			автомобіль). Вивести на екран назву транспортного засобу, яким він може керувати.</p>
+	</div>
+	<h2>Розв'язок:</h2>
+	<script>
+		let driverCategory = prompt('напишіть назву категорії водія (A, B, C)', '')
+
+		if (driverCategory == 'A')
+			document.write('<div><p>Вам дозволено керувати Мотоциклом</p></div>')
+
+		else if (driverCategory == 'B')
+			document.write('<div><p>Вам дозволено керувати Легковим автомобілем</p></div>')
+
+		else if (driverCategory == 'C')
+			document.write('<div><p>Вам дозволено керувати Вантажним автомобілем</p></div>')
+
+		else if ((driverCategory != 'A') && (driverCategory != 'B') && (driverCategory != 'C'))
+			document.write('<div><p>ПОМИЛКА - напишіть ТІЛЬКИ (A, B, C)</p></div>')
+			/* driverCategory = prompt('ПОМИЛКА ТІЛЬКИ (A, B, C)', '') */
+	</script>
+
+</body>
+
+</html>
