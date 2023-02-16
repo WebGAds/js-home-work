@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br>
+	<br>
+	<a href="../lessons3.html">ДЗ №3</a>
+	<h1>Завдання 4</h1>
+	<div>
+		<p>Умова - з клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у садочку, школярем, студентом,
+			працівником, пенсіонером).</p>
+	</div>
+	<h2>Розв'язок:</h2>
+
+	<script>
+		let userAge = parseInt(prompt('напишіть вік людини', '5'))
+
+		if (userAge <= 6)
+			document.write('<div><p>Дитина у садочку</p></div>');
+
+		else if (userAge <= 16)
+			document.write('<div><p>Школяр</p></div>');
+
+		/* else if ((userAge > 7) && (userAge <= 16))
+			document.write(`<div><p>Школяр</p></div>`) */
+
+		else if (userAge <= 22)
+			document.write('<div><p>Студент</p></div>');
+
+		else if (userAge <= 59)
+			document.write('<div><p>Працівник</p></div>');
+
+		else if (userAge >= 60)
+			document.write('<div><p>Пенсіонер</p></div>');
+	</script>
+</body>
+
+</html>
