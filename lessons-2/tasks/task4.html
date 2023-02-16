@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+	<a href="/index.html">Головна</a>
+	<br>
+	<br>
+	<a href="../lessons2.html">ДЗ №2</a>
+	<h1>Завдання 4</h1>
+	<p>Умова - дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.</p>
+	<br>
+	<h2>Розв'язок:</h2>
+	<script>
+		// 1. Вводжу дані
+		let centimeters = parseInt(prompt('сантиметри', ''));
+		const NUMBER_ONE_HUNDRED = 100;
+		const NUMBER_ONE_HUNDRED_THOUSAND = 100000;
+
+		// 2. Обчислення
+		let meters = centimeters / NUMBER_ONE_HUNDRED;
+		let kilometers = centimeters / NUMBER_ONE_HUNDRED_THOUSAND;
+
+		// 3. Виводжу результат
+		document.write(`<div><p>${centimeters}см= ${meters} Метрів<p/><div/> 
+			<div><p>${centimeters}см= ${kilometers} Кілометрів<p/><div/>`);
+	</script>
+</body>
+
+</html>
