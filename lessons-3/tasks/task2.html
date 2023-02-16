@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+	<a href="/index.html">Головна</a>
+	<br>
+	<br>
+	<a href="../lessons3.html">ДЗ №3</a>
+	<h1>Завдання 2</h1>
+	<div>
+		<p>Умова - з клавіатури вводиться ціна товару і кількість грошей. Якщо грошей не вистачає то
+			відмовляємо у
+			покупці,
+			інакше, якщо ще залишаються гроші, то пропонуємо купити лотерею за 4 грн.</p>
+	</div>
+	<h2>Розв'язок:</h2>
+	<script>
+		const productPrice = parseFloat(prompt('напишіть ціну за Кавун', ''));
+		const haveMoney = parseFloat(prompt('Напишіть скільки маєте грошей', ''));
+		const buyLotteryTicket = 4;
+
+		// нема грошей
+		if (haveMoney < productPrice)
+			document.write(`<div><p>У Вас не достатньо грошей для замовлення товару</p></div>`);
+
+		// кількість придбаних квитків 
+		/* else if (haveMoney >= productPrice + buyLotteryTicket)
+			document.write(`<div><p>Замовлення оформлено! 
+				Придбано лотерейних квитків
+				${Math.floor((haveMoney - productPrice) / buyLotteryTicket)}</p></div>`); */
+
+		// наче теж працює
+		/* else if (haveMoney >= productPrice + buyLotteryTicket)
+			document.write(`<div><p>Замовлення оформлено! Пропонуємо придбати лотерейний квиток за ${buyLotteryTicket} грн.</p></div>`); */
+
+		// замовлення оформлено пропоную квитки
+		else if ((haveMoney - productPrice) >= buyLotteryTicket)
+			document.write(`<div><p>Замовлення оформлено! Пропонуємо придбати лотерейний квиток за ${buyLotteryTicket} грн.</p></div>`);
+
+		// замовлення оформлено
+		else
+			document.write(`<div><p>Замовлення оформлено!</p></div>`);
+	</script>
+
+</body>
+
+</html>
