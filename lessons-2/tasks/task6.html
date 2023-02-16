@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+	<a href="/index.html">Головна</a>
+	<br>
+	<br>
+	<a href="../lessons2.html">ДЗ №2</a>
+	<h1>Завдання 6</h1>
+	<p>Умова - з клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару
+		окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.</p>
+	<br>
+	<h2>Розв'язок:</h2>
+	<script>
+		// 1. Вводжу дані		
+		let avocadoQuantity = parseInt(prompt('кількість авокадо', ''));
+		let avocadoPrice = parseFloat(prompt('вартість авокадо', ''));
+
+		let tomatoQuantity = parseInt(prompt('кількість помідорів', ''));
+		let tomatoPrice = parseFloat(prompt('вартість помідорів', ''));
+
+		let lemonQuantity = parseInt(prompt('кількість лимонів', ''));
+		let lemonPrice = parseFloat(prompt('вартість лимонів', ''));
+
+		// 2. Обчислення
+		let avocadoCost = avocadoQuantity * avocadoPrice;
+		let tomatoCost = tomatoQuantity * tomatoPrice;
+		let lemonCost = lemonQuantity * lemonPrice;
+		let totalСost = avocadoPrice + tomatoPrice + lemonPrice;
+		let totalQuantity = avocadoCost + tomatoCost + lemonCost;
+
+		// 3. Виводжу результат
+		document.write(`
+			<table border="2px">
+				<tbody>
+					<tr>
+						<th>Продукти</th>
+						<th>Кількість</th>
+						<th>Ціна</th>
+						<th>Вартість</th>
+					</tr>
+					<tr>
+						<th>Авокадо</th>
+						<td>${avocadoQuantity} шт.</td>
+						<td>${avocadoPrice} грн.</td>
+						<td>${avocadoCost.toFixed(2)} грн.</td>
+					</tr>
+					<tr>
+						<th>Помідори</th>
+						<td>${tomatoQuantity} шт.</td>
+						<td>${tomatoPrice} грн.</td>
+						<td>${tomatoCost.toFixed(2)} грн.</td>
+					</tr>
+					<tr>
+						<th>Лимон</th>
+						<td>${lemonQuantity} шт.</td>
+						<td>${lemonPrice} грн.</td>
+						<td>${lemonCost.toFixed(2)} грн.</td>
+					</tr>
+					<tr>
+						<th>Загальна вартість</th>
+						<td>${totalСost.toFixed(2)} грн.</td>
+						<td>-</td>
+						<td>${totalQuantity.toFixed(2)} грн.</td>
+					</tr>
+				</tbody>
+			</table> <div><p>Передбачення для Вас: почніть цей день з снікерса і кави. Героям Слава! Смерть оркам</p></div>`);
+	</script>
+</body>
+
+</html>
