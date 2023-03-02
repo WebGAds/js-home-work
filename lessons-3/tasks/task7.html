@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="../../css/style.css" />
+	</head>
+
+	<body>
+		<a href="../../index.html">Головна</a>
+		<br />
+		<br />
+		<a href="../lessons3.html">ДЗ №3</a>
+		<h1>Завдання 7</h1>
+		<div>
+			<p>
+				Умова - з клавіатури вводиться номер місяця. Вивести до якої пори він
+				відноситься
+			</p>
+		</div>
+		<h2>Розв'язок:</h2>
+		<script>
+			// variant 1 ------------------------
+			/* let seasonMonthNum = parseInt(prompt("напишіть номер місяця"));
+
+			if (seasonMonthNum === 1 || seasonMonthNum === 2 || seasonMonthNum === 12)
+				document.write("<div><p>Пора року - Зима</p></div>");
+			else if (
+				seasonMonthNum === 3 ||
+				seasonMonthNum === 4 ||
+				seasonMonthNum === 5
+			)
+				document.write("<div><p>Пора року - Весна</p></div>");
+			else if (
+				seasonMonthNum === 6 ||
+				seasonMonthNum === 7 ||
+				seasonMonthNum === 8
+			)
+				document.write("<div><p>Пора року - Літо</p></div>");
+			else if (
+				seasonMonthNum === 9 ||
+				seasonMonthNum === 10 ||
+				seasonMonthNum === 11
+			)
+				document.write("<div><p>Пора року - Осінь</p></div>");
+			else if (seasonMonthNum <= 0 || seasonMonthNum >= 13)
+				document.write(
+					"<div><p>Помилка - вкажіть корректне заняення від 1 до 12</p></div>"
+				); */
+
+			// variant 2 -------------------
+			const seasonMonthNum = parseInt(prompt("напишіть номер місяця"))
+			let season
+
+			switch (seasonMonthNum) {
+				case 1:
+				case 2:
+				case 12:
+					season = "Зима"
+					break
+				case 3:
+				case 4:
+				case 5:
+					season = "Весна"
+					break
+				case 6:
+				case 7:
+				case 8:
+					season = "Літо"
+					break
+				case 9:
+				case 10:
+				case 11:
+					season = "Осінь"
+					break
+				default:
+					season = "Помилка - вкажіть корректне значення від 1 до 12"
+			}
+
+			document.write(`<div><p>Пора року - ${season}</p></div>`)
+		</script>
+	</body>
+</html>
