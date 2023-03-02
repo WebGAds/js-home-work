@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons5.html">ДЗ №5</a>
+	<h1 class="task-h1">Завдання 11</h1>
+	<div>
+		<p class="task-p">Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+	<script>
+
+		let minUserNum = parseInt(prompt('Введіть мінімльне число', '10'))
+		let maxUserNum = parseInt(prompt('Введіть максимальне число', '51'))
+
+		if (minUserNum > maxUserNum) {
+			let temporary = minUserNum
+			minUserNum = maxUserNum
+			maxUserNum = temporary
+		}
+
+		let sumOddNum = 0
+		let quantityOddNum = 0
+
+		for (let currentNum = minUserNum + 1; currentNum <= maxUserNum; currentNum++) {
+
+			if (currentNum % 2 !== 0 && quantityOddNum <= 5) {
+				sumOddNum += currentNum
+				quantityOddNum++
+			}
+		}
+
+		document.write(`Сума 5 непарних чисел = ${sumOddNum}`)
+	</script>
+
+</body>
+
+</html>

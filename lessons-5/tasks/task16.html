@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons5.html">ДЗ №5</a>
+	<h1 class="task-h1">Завдання 16</h1>
+	<div>
+		<p class="task-p">Користувач поступово вводить прибуток магазину за кожен день протягом N тижнів. Знайти
+			загальну величину прибутку та
+			вивести величину прибутку протягом кожного окремого тижня.
+		</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		const quantityWeek = parseInt(prompt('Ввведіть кількість тижнів'))
+		const dayWeek = 7
+		let weekProfit = 0
+		let totalProfit = 0
+		let result = ''
+
+		for (let i = 0; i < quantityWeek; i++) {
+
+			for (let j = 0; j < dayWeek; j++) {
+				let dayProfit = parseInt(prompt(`Введіть прибуток за ${j + 1}-й день ${i + 1}-го тижня`, '2'))
+				weekProfit += dayProfit
+			}
+			totalProfit += weekProfit
+			result += `<div><p>За ${i + 1}-й тиждень ваш прибуток ${weekProfit}</p></div>`
+		}
+		result += `<div><p>Загальний прибуток ${totalProfit}</p></div>`
+		document.write(result)
+	</script>
+</body>
+
+</html>

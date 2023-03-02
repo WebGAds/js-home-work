@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons5.html">ДЗ №5</a>
+	<h1 class="task-h1">Завдання 13</h1>
+	<div>
+		<p class="task-p">Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі розміром N*M. Маючи К
+			снарядів
+			користувач
+			намагається потопити корабель.</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+	<script>
+		let heightCoordinates = parseInt(prompt('Введіть висоту поля гри', '2'))
+		let widthCoordinates = parseInt(prompt('Введіть ширину поля гри', '2'))
+		const quantityShot = parseInt(prompt('Введіть кількість пострілів', '3'))
+
+		const randomCoordinatesHeight = Math.floor(Math.random() * heightCoordinates) + 1
+		const randomCoordinatesWidth = Math.floor(Math.random() * widthCoordinates) + 1
+
+		let result
+
+		for (i = 0; i < quantityShot; i++) {
+			let shotCoordinatesHeight = parseInt(
+				prompt(`Введіть координати по горизонталі(1-${heightCoordinates})`)
+			)
+			let shotCoordinatesWidth = parseInt(
+				prompt(`Введіть координати по вертикалі(1-${widthCoordinates})`)
+			)
+			if (shotCoordinatesHeight == randomCoordinatesHeight && shotCoordinatesWidth == randomCoordinatesWidth) {
+				result = "Вітаю! Ви поцілили корабель!"
+				break
+			} else if (quantityShot - i == 1) {
+				result = "Постріли скінчилися - Вам не вдалось потопити однопалубний корабель"
+			} else {
+				alert(`Невдала спроба - Лишилось  ${quantityShot - i - 1} пострілів`)
+			}
+		}
+		document.write(result);
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons5.html">ДЗ №5</a>
+	<h1 class="task-h1">Завдання 10</h1>
+	<div>
+		<p class="task-p">Знайти суму всіх непарних чисел, що знаходяться між заданими користувачем числами</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+	<script>
+		// користувач вводить два числа - мінімальне та максимальне число діапазону, які зберігаються у змінних
+		let minUserNum = parseInt(prompt('Введіть мінімльне число від 1 - 30', '10'))
+		let maxUserNum = parseInt(prompt('Введіть максимальне число від 31 - 55', '51'))
+
+		// Якщо користувач помилково введе мінімальне число, яке більше за максимальне, -
+		// - то змінні міняються місцями, щоб забезпечити правильну логіку в подальшому коді
+		if (minUserNum > maxUserNum) {
+			let temporary = minUserNum
+			minUserNum = maxUserNum
+			maxUserNum = temporary
+		}
+
+		// Створюється змінна sumOddNum, яка буде використовуватися для зберігання суми всіх непарних чисел
+		let sumOddNum = 0
+
+		// у циклі for перебираються всі числа від minUserNum + 1 до maxUserNum. - 
+		// - Значення currentNum починається з minUserNum + 1, щоб врахувати той факт, що перше число - 
+		// - у діапазоні не має бути парним.
+		for (let currentNum = minUserNum + 1; currentNum <= maxUserNum; currentNum++) {
+
+			// У тілі циклу перевіряється, чи є currentNum непарним числом, тобто чи залишок від ділення - 
+			// - на 2 не дорівнює нулю. Якщо currentNum є непарним числом, то його додають до змінної sumOddNum.
+			if (currentNum % 2 !== 0) {
+				sumOddNum += currentNum
+			}
+		}
+		// виводиться сума всіх непарних чисел
+		document.write(`Сума всіх непарних чисел = ${sumOddNum}`);
+	</script>
+
+</body>
+
+</html>

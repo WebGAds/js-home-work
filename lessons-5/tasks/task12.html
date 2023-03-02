@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons5.html">ДЗ №5</a>
+	<h1 class="task-h1">Завдання 12</h1>
+	<div>
+		<p class="task-p">Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається
+			як одне з чотирьох
+			зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три других –
+			200, три
+			третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для вибору зображення за
+			номером)</p>
+		<img src="../img/task-12.png">
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<div>
+		<p>Три Вишні = 100грн. Три Авокадо = 200грн. Три Винограда = 500грн. Три Лимона = 1000грн.</p>
+	</div>
+
+	<!-- <div class="task-img">
+		<img src="../img/cherry.svg" alt="">
+		<img src="../img/cherry.svg" alt="">
+		<img src="../img/cherry.svg" alt="">
+		<p>= 100грн</p>
+	</div>
+	<div class="task-img">
+		<img src="../img/avocado.svg" alt="">
+		<img src="../img/avocado.svg" alt="">
+		<img src="../img/avocado.svg" alt="">
+		<p>= 200грн</p>
+	</div>
+	<div class="task-img">
+		<img src="../img/grape.svg" alt="">
+		<img src="../img/grape.svg" alt="">
+		<img src="../img/grape.svg" alt="">
+		<p>= 500грн</p>
+	</div>
+	<div class="task-img">
+		<img src="../img/lemon.svg" alt="">
+		<img src="../img/lemon.svg" alt="">
+		<img src="../img/lemon.svg" alt="">
+		<p>= 1000грн</p>
+	</div>
+	<div>
+		<p>Успіхів!</p>
+	</div> -->
+	<style>
+		.doc-write-img {
+			width: 150px;
+			height: 150px;
+			margin-right: 50px;
+		}
+	</style>
+
+	<script>
+		const cherryImg = "../img/cherry.svg"
+		const avocadoImg = "../img/avocado.svg"
+		const grapeImg = "../img/grape.svg"
+		const lemonImg = "../img/lemon.svg"
+
+		const cherryWin = 100
+		const avocadoWin = 200
+		const grapeWin = 500
+		const lemonWin = 1000
+
+		const maxRandomImg = 3
+		let result = "", prize, firstImg, secondImg, thirdImg
+
+		for (let i = 0; i < maxRandomImg; i++) {
+			let randomImg = Math.floor(Math.random() * (maxRandomImg + 1))
+			let droppedImg
+			switch (randomImg) {
+				case 0: droppedImg = cherryImg
+					break;
+				case 1: droppedImg = avocadoImg
+					break;
+				case 2: droppedImg = grapeImg
+					break;
+				case 3: droppedImg = lemonImg
+					break;
+
+				default:
+					break;
+			}
+
+			if (i === 0) firstImg = randomImg
+			else if (i === 1) secondImg = randomImg
+			else thirdImg = randomImg
+			document.write(
+				`<img class="doc-write-img" src="${droppedImg}"'/>`
+			)
+		}
+
+		let isCellsEqual =
+			firstImg === secondImg && secondImg === thirdImg
+
+		if (isCellsEqual) {
+			switch (firstImg) {
+				case 0:
+					prize = cherryWin
+					break
+				case 1:
+					prize = avocadoWin
+					break
+				case 2:
+					prize = grapeWin
+					break
+				case 3:
+					prize = lemonWin
+					break
+			}
+			result = `Ваш виграш = ${prize} грн`
+
+		} else {
+			result = "Ваш виграш = 0 - Спробуйте ще!"
+		}
+		document.write(`<div><p>${result}</p></div>`)
+
+	</script>
+
+</body>
+
+</html>

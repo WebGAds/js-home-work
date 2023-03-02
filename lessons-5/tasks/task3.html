@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons5.html">ДЗ №5</a>
+	<h1 class="task-h1">Завдання 3</h1>
+	<div>
+		<p class="task-p">Вивести таблицю з одним рядком і 7 стовпцями.</p>
+		<img src="../img/task-3.png">
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+	<script>
+		// Variant 1 --------------------
+		/* // Створюємо таблицю з одним рядком та 7 стовпцями
+			document.write("<table border='2px'><tr>");
+			for (let i = 1; i <= 7; i++) {
+				// Додаємо новий стовпець до рядка таблиці
+				document.write(`<td>${i}</td>`);
+			}
+			// Закриваємо рядок і таблицю
+			document.write("</tr></table>"); */
+
+		// Variant 2 for ------------------------------
+		let tableRow = `<table border="2px"><tbody><tr>`
+		for (i = 0; i < 7; i++) {
+			tableRow += `<td>${i + 1}</td>`
+		}
+		tableRow += "</tr></tbody></table>"
+		document.write(tableRow);
+	</script>
+</body>
+
+</html>

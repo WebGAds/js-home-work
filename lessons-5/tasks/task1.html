@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons5.html">ДЗ №5</a>
+	<h1 class="task-h1">Завдання 1</h1>
+	<div>
+		<p class="task-p">Вивести з використанням циклів маркований список з випадковими числами (1-100). Кількість
+			випадкових чисел
+			вводиться користувачем. Приклад:</p>
+		<ul>
+			<li>12</li>
+			<li>21</li>
+			<li>34</li>
+			<li>51</li>
+		</ul>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+	<script>
+		// 1 за допомогою циклу for
+		/* const userNumber = parseInt(prompt('Скільки вивести списків з випадковими числами від 1 до 100?'))
+		for (let i = 1; i <= userNumber; i++) {
+			let randomNumbers = Math.floor(Math.random() * 100) + 1
+			document.write(`<ul><li>${randomNumbers}</li></ul>`)
+		} */
+
+		// 2 за допомогою циклу while
+		const userNumber = parseInt(prompt('Скільки вивести списків з випадковими числами від 1 до 100?'))
+		const minNumberLists = 1
+		const maxNumberLists = 100
+		let i = 1
+		let result = ""
+
+		while (i <= userNumber) {
+			let randomNumbers = Math.floor(Math.random() * (maxNumberLists - minNumberLists + 1)) + minNumberLists
+			result += `<li>${randomNumbers}</li>`
+			i++
+		}
+		document.write(`<ul>${result}</ul>`)
+	</script>
+
+</body>
+
+</html>

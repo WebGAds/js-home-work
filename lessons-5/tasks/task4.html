@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons5.html">ДЗ №5</a>
+	<h1 class="task-h1">Завдання 4</h1>
+	<div>
+		<p class="task-p">Вивести таблицю з 3 рядків і 7 стовпців</p>
+		<img src="../img/task-4.png">
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		let table = "<table border='2px'><tbody>";
+
+		for (let tableRow = 0; tableRow < 3; tableRow++) {
+			table += "<tr>";
+			for (let tableColumn = 0; tableColumn < 7; tableColumn++) {
+				table += `<td>${tableColumn + 1}</td>`;
+			}
+			table += "</tr>";
+		}
+
+		table += "</tbody></table>";
+		document.write(table);
+	</script>
+</body>
+
+</html>

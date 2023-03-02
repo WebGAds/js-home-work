@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons5.html">ДЗ №5</a>
+	<h1 class="task-h1">Завдання 9</h1>
+	<div>
+		<p class="task-p">Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати
+			confirm)</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		// variant 1 for -------------------------------
+		/* const minNum = 1
+		const maxNum = 100
+
+		const enterNum = parseInt(prompt('Введіть номер від 1 до 100', '1'))
+
+		let result = ""
+
+		let computerNum;
+
+		for (let guessNum; guessNum = Infinity;) {
+			computerNum = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+			const checkNum = confirm(`Ви загадали число ${computerNum}?`);
+
+			if (checkNum) {
+				result = `Це було легко - я вгадав загадане число ${computerNum}!`;
+				break;
+			}
+		}
+		document.write(result) */
+
+		// variant 2 while
+		const minUserNumber = 1
+		const maxUserNumber = 100
+
+		const enterNum = parseInt(prompt('Введіть номер від 1 до 100', '1'))
+
+		let result = ""
+		let computerNum
+		let guessNum = Infinity
+
+		while (guessNum) {
+			computerNum = Math.floor(Math.random() * (maxUserNumber - minUserNumber + 1)) + minUserNumber
+			const checkNum = confirm(`Ви загадали число ${computerNum}?`)
+
+			if (checkNum) {
+				result = `Це було легко - я вгадав загадане число ${computerNum}!`
+				break
+			}
+		}
+
+		document.write(result)
+
+	</script>
+
+</body>
+
+</html>

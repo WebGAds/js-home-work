@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons5.html">ДЗ №5</a>
+	<h1 class="task-h1">Завдання 5</h1>
+	<div>
+		<p class="task-p">Вивести таблицю з 3 рядків і 3 стовпців</p>
+		<img src="../img/task-5.png">
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+	<script>
+
+		// змінна, яка містить код таблиці, що буде додаватися до сторінки
+		let table = "<table border='2px'><tbody>";
+
+		// цикл для створення рядків таблиці
+		for (let tableRow = 0; tableRow < 3; tableRow++) {
+
+			// додавання рядка до таблиці
+			table += "<tr>";
+
+			// цикл для створення стовбчиків у рядку таблиці.
+			for (let tableColumn = 0; tableColumn < 3; tableColumn++) {
+
+				// обчислення числа для заповнення комірки таблиці
+				const tableNumber = tableRow * 3 + tableColumn + 1
+
+				// додавання стовбчиків до рядка таблиці
+				table += `<td>${tableNumber}</td>`;
+			}
+			// закриття рядка таблиці
+			table += "</tr>";
+		}
+
+		// закриття таблиці
+		table += "</tbody></table>";
+
+		// додавання таблиці до сторінки
+		document.write(table);
+	</script>
+</body>
+
+</html>
