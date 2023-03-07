@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons7.html">ДЗ №7</a>
+	<h1 class="task-h1">Завдання 2</h1>
+	<div>
+		<p class="task-p">Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		const userDayNum = parseInt(prompt('Введіть день тижня від 1-7'))
+		const dayName = isDayNum(userDayNum)
+
+		function isDayNum(dayNum) {
+			let result
+
+			switch (dayNum) {
+				case 1:
+					result = "Понеділок - Робочий день"
+					break
+				case 2:
+					result = "Вівторок - Робочий день"
+					break
+				case 3:
+					result = "Середа - Робочий день"
+					break
+				case 4:
+					result = "Четверг - Робочий день"
+					break
+				case 5:
+					result = "П'ятниця - Робочий день"
+					break
+				case 6:
+					result = "Субота - Вихідний день"
+					break
+				case 7:
+					result = "Неділя - Вихідний день"
+					break
+			}
+			return result
+		}
+
+		document.write(`<div><p>${dayName}</p></div>`)
+
+	</script>
+
+</body>
+
+</html>

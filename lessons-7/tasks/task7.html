@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons7.html">ДЗ №7</a>
+	<h1 class="task-h1">Завдання 7</h1>
+	<div>
+		<p class="task-p">Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень
+			передаються у функцію)</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+	<style>
+		.doc-write-img {
+			width: 150px;
+			height: 150px;
+			margin-right: 50px;
+		}
+	</style>
+
+	<script>
+		const img_1 = "../img/cherry.svg"
+		const img_2 = "../img/avocado.svg"
+		const img_3 = "../img/grape.svg"
+		const img_4 = "../img/lemon.svg"
+
+		function getRandomImg(img_1, img_2, img_3, img_4) {
+			let randomImg = Math.floor(Math.random() * 4)
+			return arguments[randomImg]
+		}
+
+		const randomImg = getRandomImg(img_1, img_2, img_3, img_4)
+
+		document.write(
+			`<img class="doc-write-img" src="${randomImg}"'/>`
+		)
+
+	</script>
+
+</body>
+
+</html>

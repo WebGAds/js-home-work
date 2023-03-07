@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons7.html">ДЗ №7</a>
+	<h1 class="task-h1">Завдання 0</h1>
+	<div>
+		<p class="task-p">Створити функцію, яка за номером місяця повертає пору року, до якої відноситься цей місяць.</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		const userMonthNum = parseInt(prompt('Введіть номер місяця від 1-12'))
+		const answerIsSeason = isSeasonMonthNum(userMonthNum)
+
+		function isSeasonMonthNum(seasonMonthNum) {
+			let result
+			if (seasonMonthNum < 3 || seasonMonthNum === 12)
+				result = 'Зима'
+			else if (seasonMonthNum < 6)
+				result = 'Весна'
+			else if (seasonMonthNum < 9)
+				result = 'Літо'
+			else if (seasonMonthNum < 12)
+				result = 'Осінь'
+			return result
+		}
+
+		document.write(`<div><p>Пора року - ${answerIsSeason}</p></div>`)
+	</script>
+</body>
+
+</html>

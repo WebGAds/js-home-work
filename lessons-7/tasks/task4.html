@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons7.html">ДЗ №7</a>
+	<h1 class="task-h1">Завдання 4</h1>
+	<div>
+		<p class="task-p">Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість
+			парних, кількість
+			додатних, кількість більших за 100.</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		function isEvenNum() {
+			let evenNum = 0
+			for (let i = 0; i < 3; i++) {
+				if (arguments[i] % 2 === 0) {
+					evenNum++
+				}
+			}
+			return evenNum
+		}
+		function isPositiveNum() {
+			let positiveNum = 0
+			for (let i = 0; i < 3; i++) {
+				if (arguments[i] > 0) {
+					positiveNum += 1
+				}
+			}
+			return positiveNum
+		}
+		function isMoreHundredNum() {
+			let moreHundredNum = 0
+			for (let i = 0; i < 3; i++) {
+				if (arguments[i] > 100) {
+					moreHundredNum++
+				}
+			}
+			return moreHundredNum
+		}
+
+		const userNum_1 = parseInt(prompt('Введіть перше число'))
+		const userNum_2 = parseInt(prompt('Введіть друге число'))
+		const userNum_3 = parseInt(prompt('Введіть третє число'))
+
+		const evenNum = isEvenNum(userNum_1, userNum_2, userNum_3)
+		const positiveNum = isPositiveNum(userNum_1, userNum_2, userNum_3)
+		const moreHundredNum = isMoreHundredNum(userNum_1, userNum_2, userNum_3)
+
+		document.write(`<div><p>1) Кількість парних чисел = ${evenNum}</p></div>
+		<div><p>2) Кількість додатніх чисел = ${positiveNum}</p></div>
+		<div><p>3) Кількість чесел більша за 100 = ${moreHundredNum}</p></div>`)
+	</script>
+
+</body>
+
+</html>
