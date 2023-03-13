@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons8.html">ДЗ №8</a>
+	<h1 class="task-h1">Завдання 4</h1>
+	<div>
+		<p class="task-p">Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які:</p>
+		<ul>
+			<li>починаються на букву «А»;</li>
+			<li>перша і остання літери співпадають;</li>
+			<li>складаються з більше ніш 5 символів.</li>
+		</ul>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		// const carNumArray = ['AA1975КА', 'AM6814КM', 'AB3314КB', 'AC6328КC', 'AA2244КА', 'CE33IE', 'BA4HA', 'AIКI']
+		const carNumArray = ['AA1975KA', 'AM6814KM', 'AB3314KB', 'AC6328KC', 'AA2244KA', 'CE33IE', 'BA4HA', 'AIKI']
+
+		function carNumFindFirstLetterA(carNumArray) {
+			let counter = 0
+			for (let i = 0; i < carNumArray.length; i++) {
+				if (carNumArray[i][0] === 'A') {
+					counter++
+				}
+			}
+			return counter
+		}
+
+		// ВИПРАВЛЕНО проблема була в тому що в одному номері 'AA1975KA' літери ввів на різних мовах англ+укр
+		function carNumFirstAndLastLettersMatch(carNumArray) {
+			let counter = 0;
+			for (let i = 0; i < carNumArray.length; i++) {
+				const carNum = carNumArray[i];
+				const firstLetter = carNum[0];
+				const lastLetter = carNum[carNum.length - 1]
+				// const lastLetter = carNumArray[i][carNumArray[i].length - 1]
+				if (firstLetter === lastLetter) {
+					counter++;
+				}
+			}
+			// console.log("Кількість автомобілів, у яких перша та остання літери співпадають: ", counter);
+			return counter;
+		}
+
+		function carNumMoreThanFiveWords(carNumArray) {
+			let counter = 0
+			for (let i = 0; i < carNumArray.length; i++) {
+				// let carNumMoreFiveWords = 5
+				if (carNumArray[i].length > 5) {
+					counter++
+				}
+			}
+			return counter
+		}
+
+		const countСarNumFirstLetterA = carNumFindFirstLetterA(carNumArray)
+		const countСarNumFirstAndLastLettersMatch = carNumFirstAndLastLettersMatch(carNumArray)
+		const countСarNumMoreThanFiveWords = carNumMoreThanFiveWords(carNumArray)
+		// console.log(countСarNumFirstAndLastLettersMatch);
+
+		document.write(`<div><p>Авто номери починаються на букву «А» = ${countСarNumFirstLetterA} разів</p></div>
+		<div><p>Перша і остання літери авто номерів співпадають = ${countСarNumFirstAndLastLettersMatch} разів</p></div>
+		<div><p>Авто номери які складаються з більше ніш 5 символів = ${countСarNumMoreThanFiveWords} разів</p></div>`)
+	</script>
+
+</body>
+
+</html>

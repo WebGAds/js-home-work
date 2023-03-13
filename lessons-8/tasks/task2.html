@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons8.html">ДЗ №8</a>
+	<h1 class="task-h1">Завдання 2</h1>
+	<div>
+		<p class="task-p">Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:</p>
+		<ul>
+			<li>номери днів, протягом яких кількість відвідувачів була меншою за 20;</li>
+			<li>номери днів, коли кількість відвідувачів була мінімальною;</li>
+			<li>номери днів, коли кількість відвідувачів була максимальною;</li>
+			<li>загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.</li>
+		</ul>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		// Створити масив кількості відвідувачів для кожного дня тижня
+		let visitors = []
+		let userEnterNum
+		const daysInWeek = 7
+
+		for (let i = 0; i < daysInWeek; i++) {
+			userEnterNum = parseInt(prompt(`Введіть кількість відвідувачів за день ${i + 1}`))
+			visitors.push(userEnterNum)
+
+		}
+
+		// Знайти всі дні з кількістю відвідувачів меншою за 20
+		function visitorsNumDaysLess_20(visitors) {
+			let visitorsNumDaysLess_20 = []
+			for (let i = 0; i < visitors.length; i++) {
+				if (visitors[i] < 20) {
+					visitorsNumDaysLess_20.push(i + 1)
+				}
+			}
+			return visitorsNumDaysLess_20
+
+		}
+
+		// Знайти мінімальну кількість відвідувачів 
+		function visitorsMinValue(visitors) {
+			// Спочатку створюється змінна minV, яка міститиме мінімальне
+			// значення відвідувачів, і початковим значенням присвоюється перший елемент масиву visitors.
+			let minV = visitors[0]
+			// за допомогою циклу for перебирається кожен елемент масиву visitors
+			for (let i = 0; i < visitors.length; i++) {
+				// порівнюється з minV
+				if (visitors[i] < minV) {
+					minV = visitors[i]
+				}
+			}
+			return minV
+		}
+
+		// Знайти максимальну кількість відвідувачів
+		// Для знаходження максимальної кількості відвідувачів, ми також пройдемося по масиву 
+		// відвідувань та порівняємо кожну кількість відвідувачів з максимальною. Якщо знайдена 
+		// кількість більша за максимальну, то замінюємо максимальну на неї та запам'ятовуємо 
+		// індекс дня. На кінці функції ми повертаємо індекс дня з максимальною кількістю відвідувачів.
+		function visitorsMaxValue(visitors) {
+			let maxV = visitors[0]
+			for (let i = 0; i < visitors.length; i++) {
+				if (visitors[i] > maxV) {
+					maxV = visitors[i]
+				}
+			}
+			return maxV
+		}
+
+		// Підрахувати загальну кількість клієнтів для робочих днів тижня 
+		function visitorsWorkDay(visitors) {
+			let workDaysTotal = 0
+
+			for (let i = 0; i < 5; i++) {
+				if (i < 5) {
+					workDaysTotal += visitors[i]
+				}
+
+			}
+			return workDaysTotal;
+
+		}
+
+		// Підрахувати загальну кількість клієнтів для вихідних днів тижня 
+		function visitorsDayOff(visitors) {
+			let dayOffTotal = 0
+
+			for (let i = 5; i < 7; i++) {
+
+				dayOffTotal += visitors[i]
+
+			}
+			return dayOffTotal;
+
+		}
+
+		const dayLess_20 = visitorsNumDaysLess_20(visitors)
+		const minValue = visitorsMinValue(visitors)
+		const maxValue = visitorsMaxValue(visitors)
+		const workDay = visitorsWorkDay(visitors)
+		const dayOff = visitorsDayOff(visitors)
+
+		document.write(`<div><p>Номери днів, протягом яких кількість відвідувачів була меншою за 20 = ${dayLess_20}</p></div>
+			<div><p>Номери днів, коли кількість відвідувачів була мінімальною = ${minValue}</p></div>
+			<div><p>Номери днів, коли кількість відвідувачів була максимальною = ${maxValue}</p></div>
+			<div><p>Загальна кількість клієнтів у Робочі дні = ${workDay}</p></div>
+			<div><p>Загальна кількість клієнтів у Вихідні дні = ${dayOff}</p></div>`)
+
+		// ------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		/* let visitors = []
+		let userEnterNum
+		const daysInWeek = 7
+
+		for (let i = 0; i < daysInWeek; i++) {
+			userEnterNum = parseInt(prompt(`Введіть кількість відвідувачів за день ${i + 1}:`))
+			visitors.push(userEnterNum)
+		}
+
+		function visitorsNumDaysLess_20(visitors) {
+			let visitorsNumDaysLess_20 = []
+			for (let i = 0; i < visit.length; i++) {
+				if (visit[i] < 20) {
+					visitorsNumDaysLess_20.push(i + 1)
+				}
+			}
+			return visitorsNumDaysLess_20
+		}
+
+		function visitorsMinValue(visitors) {
+			let minV = visitors[0]
+			for (let i = 0; i < visitors.length; i++) {
+				if (visitors[i] < minV) {
+					minV = visitors[i]
+				}
+			}
+			return minV
+		}
+
+		function visitorsMaxValue(visitors) {
+			let maxV = visitors[0]
+			for (let i = 0; i < visitors.length; i++) {
+				if (visitors[i] > maxV) {
+					maxV = visitors[i]
+				}
+			}
+			return maxV
+		}
+
+		function visitorsWorkDay(visitors) {
+
+		} */
+
+
+	</script>
+
+</body>
+
+</html>

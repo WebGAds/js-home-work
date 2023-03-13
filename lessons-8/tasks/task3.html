@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons8.html">ДЗ №8</a>
+	<h1 class="task-h1">Завдання 3</h1>
+	<div>
+		<p class="task-p">Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		// variant - 1 -------------------------------------
+		function findNameIvan(allNameStudenst) {
+			let counter = 0
+			for (let i = 0; i < allNameStudenst.length; i++) {
+				if (allNameStudenst[i] === 'Іван') {
+					counter++
+				}
+
+			}
+			return counter
+		}
+
+		const allNameStudenst = ['Оленка', 'Іван', 'Марія', 'Петро', 'Євген', 'Іван', 'Іван']
+		const ivanCounter = findNameIvan(allNameStudenst)
+		document.write(`<div><p>Ім'я Іван зустрічається ${ivanCounter} разів</p></div>`);
+
+		// variant - 2 -------------------------------------
+		/* function countIvanNames() {
+			let ivanCount = 0;
+			while (true) {
+				const name = prompt('Введіть ім\'я студента:');
+				// якщо користувач натиснув "Скасувати" або "ОК" з порожнім полем
+				if (name === null || name === '') {
+					break; // виходимо з циклу
+				}
+				// якщо ім'я введене правильно
+				if (name === 'Іван') {
+					// збільшуємо лічильник
+					ivanCount++;
+				}
+			}
+			// повертаємо кількість зустрічей імені "Іван"
+			return ivanCount;
+		}
+
+		const ivanCounter = countIvanNames();
+		document.write(`<div><p>Іван написали ${ivanCounter} разів</p></div>`); */
+
+		// varaant - 3 ===============================================
+
+		/* function getNameStudents(name) {
+			let nameStudents = [];
+			const numStudents = prompt('Введіть кількість студентів');
+
+			for (let i = 0; i < numStudents; i++) {
+				const userEnterName = prompt(`Введіть ім'я студента ${i + 1}`);
+				nameStudents.push(userEnterName);
+			}
+
+			let counter = 0;
+			for (let i = 0; i < nameStudents.length; i++) {
+				if (nameStudents[i] === name) {
+					counter++;
+				}
+			}
+
+			return counter;
+		}
+
+		const nameIvan = 'Іван';
+		const ivanCounter = getNameStudents(nameIvan);
+		document.write(`<div><p>Ім'я ${nameIvan} зустрічається ${ivanCounter} разів</p></div>`); */
+	</script>
+</body>
+
+</html>

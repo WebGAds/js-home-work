@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons8.html">ДЗ №8</a>
+	<h1 class="task-h1">Завдання 1</h1>
+	<div>
+		<p class="task-p">Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії
+			він відноситься
+			(відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча би одна
+			трійка)).</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+
+		// обчислює середню оцінку
+		function calculateAverage(scores) {
+			let sum = 0;
+			for (let i = 0; i < scores.length; i++) {
+				sum += scores[i];
+			}
+			return sum / scores.length;
+		}
+
+		function calculateCategory(scores) {
+			// передаю середню оцінку
+			let average = calculateAverage(scores);
+			// порівняння середньої оцінки з критеріями категорії
+			if (average < 3) {
+				return "двійочник";
+			} else if (average < 4) {
+				return "трійочник";
+			} else if (average < 5) {
+				return "хорошист";
+			} else {
+				return "відмінник";
+			}
+		}
+
+		// масив
+		const scores = [4, 5, 3, 2, 1];
+		const averageScore = calculateAverage(scores);
+		const studentCategory = calculateCategory(scores);
+
+		document.write(`<div><p>Середня оцінка: ${averageScore}</p></div>
+			<div><p>Категорія: ${studentCategory}</p></div>`);
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons8.html">ДЗ №8</a>
+	<h1 class="task-h1">Завдання 8</h1>
+	<div>
+		<p class="task-p">Дано одновимірний масив, у якому зберігається певна виграшна сума (елементи заповнюються
+			випадковим чином значеннями від
+			-500 до 500). Надаючи користувачу можливість вибирати номери елементів (поки він не відмовиться). Знаходити
+			сумарний
+			виграш.</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		function calculateWinSum(winningAmountArray) {
+			let winSum = 0
+			for (let i = 0; i < winningAmountArray.length; i++) {
+				console.log(`Елемент з індексом ${i}: ${winningAmountArray[i]}`)
+				let userInput = prompt("Введіть індекс елементу масиву від 0 до 9, або натисніть кнопку 'Скасувати', щоб закінчити гру:")
+				if (userInput === null) {
+					break;
+				} else if (isNaN(userInput) || userInput < 0 || userInput >= winningAmountArray.length) {
+					alert("Введіть коректний індекс!")
+					i--; // повторення цього ітерації циклу
+				} else {
+					winSum += winningAmountArray[userInput]
+				}
+			}
+			return winSum
+		}
+
+		const winningAmountArray = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]
+		const totalWin = calculateWinSum(winningAmountArray)
+		document.write(`Ваш виграш становить ${totalWin}`)
+	</script>
+
+</body>
+
+</html>

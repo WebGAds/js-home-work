@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons8.html">ДЗ №8</a>
+	<h1 class="task-h1">Завдання 9</h1>
+	<div>
+		<p class="task-p">Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних
+			кораблів. Комп’ютер
+			довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка пуста, якщо 1
+			– то це
+			означає, що там є корабель. Користувач вводить номер клітинки, куди стріляє. Гра продовжується до тих пір, поки
+			не
+			будуть потоплені усі кораблі.</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		function playBattleship(boardSize, shipCount) {
+			// створюємо масив для дошки з розміром boardSize та заповнюємо його нулями
+			let board = []
+			for (let i = 0; i < boardSize; i++) {
+				board.push(0)
+			}
+			// розміщуємо кораблі на дошці випадковим чином
+			for (let i = 0; i < shipCount; i++) {
+				let shipPosition = Math.floor(Math.random() * boardSize)
+				board[shipPosition] = 1
+			}
+			// гра триває, доки є кораблі на дошці
+			while (shipCount > 0) {
+				// користувач вводить номер клітинки, куди стріляє
+				let userInput = parseInt(prompt(`Введіть номер клітинки, куди ви стріляєте (від 0 до ${boardSize - 1}):`))
+				// перевіряємо, чи ввів користувач дійсний номер клітинки
+				if (isNaN(userInput) || userInput < 0 || userInput >= boardSize) {
+					alert("Введіть коректний номер клітинки!")
+				} else if (board[userInput] === 1) {
+					// якщо користувач вбив корабель, то помічаємо його на дошці (-1) та зменшуємо shipCount
+					board[userInput] = -1
+					alert("Ви потопили корабель!")
+					shipCount--
+				} else if (board[userInput] === -1) {
+					// якщо користувач вже вбив цей корабель, то нічого не робимо
+					alert("Ви вже потопили цей корабель!")
+				} else {
+					// якщо користувач промахнувся, то помічаємо цю клітинку на дошці як промах (-2)
+					board[userInput] = -2
+					alert("Ви промахнулися!")
+				}
+			}
+			alert("Ви виграли гру!")
+		}
+
+		// користувач вводить розмір гральної дошки та кількість кораблів
+		let boardSize = parseInt(prompt("Введіть розмір гральної дошки:"))
+		let shipCount = parseInt(prompt("Введіть кількість кораблів:"))
+		// запускаємо гру
+		playBattleship(boardSize, shipCount)
+
+
+
+	</script>
+
+</body>
+
+</html>
