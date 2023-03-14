@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons9.html">ДЗ №9</a>
+	<h1 class="task-h1">Завдання 1</h1>
+	<div>
+		<p class="task-p">Користувач вводить кількість елементів. Створити масив, що складається з вказаної кількості
+			елементів заповнених нулями.</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		let userEnterIndexNum = parseInt(prompt('Введіть кількість елементів в масив'))
+		// userEnterIndexNum замінюю на arr для кращого читання
+		let arr = new Array(userEnterIndexNum).fill(0)
+		console.log(arr);
+	</script>
+
+</body>
+
+</html>

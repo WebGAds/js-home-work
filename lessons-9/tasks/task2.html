@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons9.html">ДЗ №9</a>
+	<h1 class="task-h1">Завдання 2</h1>
+	<div>
+		<p class="task-p">Користувач вводить кількість елементів. Створити масив,
+			у якому перша половина заповнена 1-цями,
+			а друга заповнена
+			7-ками.</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		// Variant 1 ----------------------------------------------------
+		/* let userEnterIndexNum = parseInt(prompt('Введіть кількість елементів'))
+		// обчислюємо середину масиву, діленням кількості елементів на два та округленням до меншого цілого числа
+		// отримане значення ми зберігаємо в змінній halfLength
+		let halfLength = Math.floor(userEnterIndexNum / 2);
+		// створюємо масив arr за допомогою конструктора Array(), передавши в якості аргументу 
+		// його кількість елементів, яку ми зчитали в попередньому кроці, та заповнюємо його нулями
+		let arr = new Array(userEnterIndexNum).fill(0);
+		// Перший цикл заповнює першу половину масиву значеннями 1
+		for (let i = 0; i < halfLength; i++) {
+			arr[i] = 1;
+		}
+		// Другий цикл заповнює другу половину масиву значеннями 7
+		for (let i = halfLength; i < userEnterIndexNum; i++) {
+			arr[i] = 7;
+		}
+		console.log(arr); */
+
+		// Variant 2 --------------------------------------
+		let userEnterIndexNum = parseInt(prompt('Введіть кількість елементів у масиві'))
+
+		let halfLength = Math.floor(userEnterIndexNum / 2)
+		let arr = []
+
+		for (let i = 0; i < halfLength; i++) {
+			arr.push(1)
+		}
+
+		for (let i = halfLength; i < userEnterIndexNum; i++) {
+			arr.push(7)
+		}
+
+		console.log(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons9.html">ДЗ №9</a>
+	<h1 class="task-h1">Завдання 9</h1>
+	<div>
+		<p class="task-p">Дано масив імен. Сформувати масив з перших літер цих імен</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		const nameArray = ['Оленка', 'Марічка', 'Олег', 'Іван', 'Петро']
+		// Використовуючи метод map(), створюємо новий масив з першими літерами імен
+		const firstLettersArray = nameArray.map(name => name[0])
+		// або Метод from
+		// const firstLettersArray = Array.from(nameArray, name => name[0])
+		// або Метод forEach
+		// const firstLettersArray = []
+		// nameArray.forEach(name => firstLettersArray.push(name[0]))
+		console.log(firstLettersArray)
+	</script>
+
+</body>
+
+</html>

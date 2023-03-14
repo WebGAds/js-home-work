@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons9.html">ДЗ №9</a>
+	<h1 class="task-h1">Завдання 4</h1>
+	<div>
+		<p class="task-p">Дано масив елементів. Вивести на екран елементи, що більші за 100</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+
+		function getElements(elementsArray) {
+			let result = []
+			const hundredNum = 100
+
+			for (let element of elementsArray) {
+				if (element > hundredNum)
+					result.push(element) // додати елемент, який задовольняє умову
+			}
+			return result
+		}
+
+		const elementsArray = [100, 200, 300, 40, 50, 60, 70]
+		const elementsMoreThanHundred = getElements(elementsArray)
+
+		document.write(`Елементи з масива, які більші за 100 = ${elementsMoreThanHundred}`)
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons9.html">ДЗ №9</a>
+	<h1 class="task-h1">Завдання 7</h1>
+	<div>
+		<p class="task-p">Дано масив цін. Змінити цей масив так, що
+			на ціни товарів, які більші за 1000 грн. дати 30%
+			знижки.</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+		// variant 1 -------------------------
+		/* const pricesArray = [1000, 1001, 1111, 999, 2222, 6, -1]
+		const discountRate = 0.7;
+		const numMoreThousand = 1000
+
+		for (let i = 0; i < pricesArray.length; i++) {
+			if (pricesArray[i] > numMoreThousand)
+				pricesArray[i] = pricesArray[i] * discountRate
+
+		}
+		console.log(pricesArray) */
+
+		// variant 2 -------------------------
+		/* const pricesArray = [1000, 1001, 1111, 999, 2222, 6, -1]
+			const discountRate = 0.7
+			const numMoreThousand = 1000
+
+			const discountedPricesArray = Array.from(pricesArray, (price) =>
+				price > numMoreThousand ? price * discountRate : price
+			)
+
+			console.log(discountedPricesArray) */
+
+		// variant 3 -----------------------------------
+
+		const pricesArray = [1000, 1001, 1111, 999, 2222, 6, -1]
+		const discountRate = 0.7
+		const numMoreThousand = 1000
+
+		const discountedPricesArray = Array.from(pricesArray, (price) => {
+			if (price > numMoreThousand) {
+				return price * discountRate;
+			} else {
+				return price;
+			}
+		})
+
+		console.log(discountedPricesArray)
+
+	</script>
+
+</body>
+
+</html>

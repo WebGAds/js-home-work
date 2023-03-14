@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons9.html">ДЗ №9</a>
+	<h1 class="task-h1">Завдання 5</h1>
+	<div>
+		<p class="task-p">Дано масив елементів. Знайти добуток додатних елементів</p>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<script>
+
+		function getMultiplicationPositiveElements(positiveElementsArray) {
+			let positiveElements = 1
+			for (const element of positiveElementsArray) {
+				if (element > 0) {
+					positiveElements *= element
+				}
+			}
+			return positiveElements
+		}
+
+		const positiveElementsArray = [1, 2, 3, 4, 5, -1, -3]
+		const resultMultiplicationPositiveElements = getMultiplicationPositiveElements(positiveElementsArray)
+		document.write(`Добуток додатних елементів = ${resultMultiplicationPositiveElements}`)
+
+	</script>
+
+</body>
+
+</html>
