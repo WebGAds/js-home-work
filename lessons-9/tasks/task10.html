@@ -24,32 +24,32 @@
 
 	<script>
 		// variant 1 ---------------------------
-		/* // дано масив цін
-		const pricesArray = [1000, 1001, 1111, 999, 2222, 6, -1];
+		// дано масив цін
+		/* const pricesArray = [1000, 1001, 1111, 999, 2222, 6, -1]
 
 		// величина податку (20%)
-		const taxRate = 0.2;
+		const taxRate = 0.2
 
 		// створюємо порожній масив для зберігання величини сплаченого податку
-		const taxesArray = [];
+		const taxesArray = []
 
 		// проходимось по масиву цін та обчислюємо величину податку для кожної ціни
 		for (let i = 0; i < pricesArray.length; i++) {
 			// перевіряємо, чи ціна не є від'ємною
 			if (pricesArray[i] >= 0) {
 				// обчислюємо величину податку та додаємо до масиву
-				taxesArray.push(pricesArray[i] * taxRate);
+				taxesArray.push(pricesArray[i] * taxRate)
 			} else {
 				// якщо ціна від'ємна, додаємо до масиву 0 (податок з від'ємної ціни дорівнює 0)
-				taxesArray.push(0);
+				taxesArray.push(0)
 			}
 		}
 		// виводимо масив з величиною сплаченого податку
-		console.log(taxesArray); */
+		console.log(taxesArray) */
 
 		// variant 2 -----------------------------------
 		const pricesArray = [1000, 1001, 1111, 999, 2222, 6, -1]
-		const taxRate = 0.2;
+		const taxRate = 0.2
 		// Масив цін, який ми повинні обробити, зберігається в змінній pricesArray.
 		// Метод map виконує дію над кожним елементом масиву. 
 		// Тут ми обчислюємо податок для кожної ціни, множачи кожну ціну на 0,2.
@@ -58,6 +58,7 @@
 		// а після знаку "=>" вказуємо, яку дію необхідно виконати з цією змінною.
 		const taxPaid = pricesArray.map(tax => tax * taxRate)
 		console.log(taxPaid)
+
 	</script>
 
 </body>
