@@ -27,49 +27,7 @@
 	<h2 class="task-h2">Розв'язок:</h2>
 
 	<script>
-		function playBattleship(boardSize, shipCount) {
-			// створюємо масив для дошки з розміром boardSize та заповнюємо його нулями
-			let board = []
-			for (let i = 0; i < boardSize; i++) {
-				board.push(0)
-			}
-			// розміщуємо кораблі на дошці випадковим чином
-			for (let i = 0; i < shipCount; i++) {
-				let shipPosition = Math.floor(Math.random() * boardSize)
-				board[shipPosition] = 1
-			}
-			// гра триває, доки є кораблі на дошці
-			while (shipCount > 0) {
-				// користувач вводить номер клітинки, куди стріляє
-				let userInput = parseInt(prompt(`Введіть номер клітинки, куди ви стріляєте (від 0 до ${boardSize - 1}):`))
-				// перевіряємо, чи ввів користувач дійсний номер клітинки
-				if (isNaN(userInput) || userInput < 0 || userInput >= boardSize) {
-					alert("Введіть коректний номер клітинки!")
-				} else if (board[userInput] === 1) {
-					// якщо користувач вбив корабель, то помічаємо його на дошці (-1) та зменшуємо shipCount
-					board[userInput] = -1
-					alert("Ви потопили корабель!")
-					shipCount--
-				} else if (board[userInput] === -1) {
-					// якщо користувач вже вбив цей корабель, то нічого не робимо
-					alert("Ви вже потопили цей корабель!")
-				} else {
-					// якщо користувач промахнувся, то помічаємо цю клітинку на дошці як промах (-2)
-					board[userInput] = -2
-					alert("Ви промахнулися!")
-				}
-			}
-			alert("Ви виграли гру!")
-		}
-
-		// користувач вводить розмір гральної дошки та кількість кораблів
-		let boardSize = parseInt(prompt("Введіть розмір гральної дошки:"))
-		let shipCount = parseInt(prompt("Введіть кількість кораблів:"))
-		// запускаємо гру
-		playBattleship(boardSize, shipCount)
-
-
-
+		
 	</script>
 
 </body>
