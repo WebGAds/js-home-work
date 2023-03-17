@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+	<a href="../../index.html">Головна</a>
+	<br />
+	<br />
+	<a href="../lessons10.html">ДЗ №10</a>
+	<h1 class="task-h1">Завдання 1 - 13</h1>
+	<div>
+		<p class="task-p">Дано історію цін на цінні папери за деякий період (згенерувати від 1
+			до 10000)</p>
+		<p>При розв’язанні задач намагайтесь використовувати відповідні методи (map, filter, reduce,…) всюди, де це
+			можливо</p>
+		<ol>
+			<li>
+				<p>Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.</p>
+			</li>
+			<li>
+				<p>Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.</p>
+			</li>
+			<li>
+				<p>Сформувати список з тих цін, які більші за попереднє значення</p>
+			</li>
+			<li>
+				<p>Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального</p>
+			</li>
+			<li>
+				<p>Підрахувати кількість змін цін</p>
+			</li>
+			<li>
+				<p>Визначити, чи є ціна, що менше 1000</p>
+			</li>
+			<li>
+				<p>Визначати, чи усі ціни більше за 1000</p>
+			</li>
+			<li>
+				<p>Підрахувати кількість цін, що більше за 1000</p>
+			</li>
+			<li>
+				<p>Підрахувати суму цін, що більше за 1000</p>
+			</li>
+			<li>
+				<p>Знайти першу ціну, що більше за 1000</p>
+			</li>
+			<li>
+				<p>Знайти індекс першої ціни, що більше за 1000</p>
+			</li>
+			<li>
+				<p>Знайти останню ціну, що більше за 1000</p>
+			</li>
+			<li>
+				<p>Знайти індекс останньої ціни, що більше за 1000</p>
+			</li>
+		</ol>
+	</div>
+	<h2 class="task-h2">Розв'язок:</h2>
+
+	<style>
+		.task_p {
+			color: #f5d489;
+		}
+	</style>
+
+	<script>
+		// загальні дані
+		let pricesOfSecuritiesArray = [1000, 2000, 1, 2, 111, 222, 5001, 10000, 8001, 16, 88, 33, 59]
+
+
+		// TASK1==========================================================================
+		//----ЗАВДАННЯ----- Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн
+		const pricesOfSecuritiesMore1000 = pricesOfSecuritiesArray.filter(
+			prices => prices > 1000)
+
+		// TASK2===========================================================================
+		//----ЗАВДАННЯ----- Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.
+		const pricesIndexOfSecuritiesMore1000 = pricesOfSecuritiesArray.reduce(
+			(prevList, el, index) => {
+				if (el > 1000)
+					prevList.push(index)
+				return prevList
+			},
+			[]
+		)
+		// variant 2-------
+		/* let pricesIndexOfSecuritiesMore1000 = []
+		for (let index = 0; index < pricesOfSecuritiesArray.length; index++) {
+			if (pricesOfSecuritiesArray[index] > 1000) pricesIndexOfSecuritiesMore1000.push(index)
+		} */
+
+		// TASK3==========================================================================
+		//----ЗАВДАННЯ----- Сформувати список з тих цін, які більші за попереднє значення
+		const greaterThanPreviousValue = pricesOfSecuritiesArray
+		greaterThanPreviousValue.sort((el1, el2) => el1 - el2)
+
+		// TASK4==========================================================================
+		//----ЗАВДАННЯ----- Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального
+		const maxPrice = Math.max(...pricesOfSecuritiesArray)
+		const percentPricesOfSecurities = pricesOfSecuritiesArray.map(price => (price / maxPrice) * 100)
+
+		// TASK5=============================================================================
+		//----ЗАВДАННЯ----- Підрахувати кількість змін цін
+
+		const countOfPriceChanges = pricesOfSecuritiesArray.reduce(
+			// Колбек-функція для методу reduce()
+			(prevValue, el, index, arr) => {
+				// Якщо індекс поточного елемента (index) більше 0
+				// і ціни не співпадають з попереднім елементом (arr[index-1]),
+				return index > 0 && el !== arr[index - 1]
+					// тоді збільшуємо лічильник змін цін на 1,
+					? prevValue + 1
+					//а інакше повертаємо попереднє значення
+					: prevValue
+			},
+			0 // Початкове значення лічильника
+		)
+		// TASK6=================================================================================
+		//----ЗАВДАННЯ----- Визначити, чи є ціна, що менше 1000
+
+		const determineIfPriceIsLess1000Logic = pricesOfSecuritiesArray.some(
+			prices => prices < 1000)
+
+		// TASK7=================================================================================
+		//----ЗАВДАННЯ----- Визначати, чи усі ціни більше за 1000
+
+		const determineIfAllPricesMore1000Logic = pricesOfSecuritiesArray.every(
+			prices => prices > 1000)
+
+		// TASK8=================================================================================
+		//----ЗАВДАННЯ----- Підрахувати кількість цін, що більше за 1000
+		// використовуємо метод filter для створення нового масиву з елементами, які більше за 1000
+
+		const countNumberPricesMore1000 = pricesOfSecuritiesArray.filter(price => price > 1000).length
+
+
+		// TASK9=================================================================================
+		//----ЗАВДАННЯ----- Підрахувати суму цін, що більше за 1000
+
+		const calculateSumPricesMore1000 = pricesOfSecuritiesArray.reduce((total, price) => {
+			// умова, яка перевіряє, чи ціна більше за 1000
+			// Якщо ціна більше за 1000, додаю її до загальної суми
+			if (price > 1000)
+				return price + total
+			// Інакше повертаю попереднє значення
+			else return total
+
+		}, 0);
+
+		// TASK10=================================================================================
+		//----ЗАВДАННЯ-----  Знайти першу ціну, що більше за 1000
+		const findFirstPriceMore1000 = pricesOfSecuritiesArray.find(price => price > 1000)
+
+		// TASK11=================================================================================
+		// ----ЗАВДАННЯ----- Знайти індекс першої ціни, що більше за 1000
+		// ДЕСЬ МАЄ БУТИ ПОМИЛКА
+		const findIndexFirstPriceMore1000 = pricesOfSecuritiesArray.findIndex(price => price > 1000)
+		console.log(findIndexFirstPriceMore1000)
+
+		// TASK12=================================================================================
+		// ----ЗАВДАННЯ----- Знайти останню ціну, що більше за 1000
+		const findLastPriceMore1000 = pricesOfSecuritiesArray.findLast(price => price > 1000)
+
+		// TASK13=================================================================================
+		// ----ЗАВДАННЯ----- Знайти індекс останньої ціни, що більше за 1000
+		// ДЕСЬ МАЄ БУТИ ПОМИЛКА
+		const findLastIndexPriceMore1000 = pricesOfSecuritiesArray.findLastIndex(price => price > 1000)
+		console.log(findLastIndexPriceMore1000)
+
+
+		document.write(`<div><p>1. Новий масив, у якому є тільки ті, що більші за 1000:</p></div>
+							<div><p class="task_p">Результат = ${pricesOfSecuritiesMore1000}</p></div>
+		<div><p>2. Новий масив, у якому є номери тільки тих, що більші за 1000:</p></div>
+							<div><p class="task_p">Результат = ${pricesIndexOfSecuritiesMore1000}</p></div>
+		<div><p>3. Сформувати список з тих цін, які більші за попереднє значення:</p></div>
+							<div><p class="task_p">Результат = ${greaterThanPreviousValue}</p></div>
+		<div><p>4. Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального:</p></div>
+							<div><p class="task_p">Результат = ${percentPricesOfSecurities}</p></div>
+		<div><p>5. Підрахувати кількість змін цін:</p></div>
+							<div><p class="task_p">Результат = ${countOfPriceChanges}</p></div>
+		<div><p>6. Визначити, чи є ціна, що менше 1000:</p></div>
+							<div><p class="task_p">Результат = ${determineIfPriceIsLess1000Logic}</p></div>
+		<div><p>7. Визначати, чи усі ціни більше за 1000:</p></div>
+							<div><p class="task_p">Результат = ${determineIfAllPricesMore1000Logic}</p></div>
+		<div><p>8. Підрахувати кількість цін, що більше за 1000:</p></div>
+							<div><p class="task_p">Результат = ${countNumberPricesMore1000}</p></div>
+		<div><p>9. Підрахувати суму цін, що більше за 1000:</p></div>
+							<div><p class="task_p">Результат = ${calculateSumPricesMore1000}</p></div>
+		<div><p>10. Знайти першу ціну, що більше за 1000:</p></div>
+							<div><p class="task_p">Результат = ${findFirstPriceMore1000}</p></div>
+		<div><p>11. Знайти індекс першої ціни, що більше за 1000:</p></div>
+							<div><p class="task_p">Результат = ${findIndexFirstPriceMore1000}</p></div>
+		<div><p>12. Знайти останню ціну, що більше за 1000:</p></div>
+							<div><p class="task_p">Результат = ${findLastPriceMore1000}</p></div>
+		<div><p>13. Знайти індекс останньої ціни, що більше за 1000:</p></div>
+							<div><p class="task_p">Результат = ${findLastIndexPriceMore1000}</p></div>`)
+	</script>
+</body>
+
+</html>
